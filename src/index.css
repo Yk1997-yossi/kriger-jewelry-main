@@ -1,0 +1,706 @@
+
+:root{
+    --bg: #0b0b0c;
+    --text: #f4f1ea;
+    --muted: rgba(244, 241, 234, 0.78);
+    --gold: #c9a24f;
+    --gold2: #e2c57a;
+    --border: rgba(244, 241, 234, 0.12);
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+    margin: 0;
+    padding: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+a:hover{
+    color: var(--gold2);
+}
+
+.container{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(10, 10, 12, 0.72);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbarInner{
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+}
+.brand{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    white-space: nowrap;
+}
+
+.brandName{
+    font-weight: 900;
+    letter-spacing: 0.4px;
+    color: var(--text);
+}
+
+.navLinks{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.navLink{
+    color: var(--muted);
+    font-weight: 600;
+    font-size: 14px;           /* חדש */
+    padding: 4px 8px;          /* היה 8px 10px */
+    border-radius: 8px;
+}
+
+
+.navLink:hover{
+    color: var(--text);
+    background: rgba(201, 162, 79, 0.10);
+    transform: translateY(-1px);
+}
+.hero{
+    position: relative;
+    min-height: calc(100vh - 68px);
+    overflow: hidden;
+    background: var(--bg);
+}
+
+.heroVideo{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 35%;
+    transform: scale(1.02);
+    filter: contrast(1.05) saturate(1.1) brightness(0.92);
+}
+.hero::after{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+            radial-gradient(55% 55% at 50% 45%, rgba(0,0,0,0.05), rgba(0,0,0,0.78) 72%),
+            linear-gradient(to bottom, rgba(0,0,0,0.55), rgba(0,0,0,0.65));
+}
+
+.heroOverlay{
+    position: relative;
+    z-index: 2;
+    min-height: calc(100vh - 52px); /* היה 68 */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+
+    transform: translateY(-48px);   /* היה -22px */
+}
+
+
+.heroOverlay h1{
+    margin: 0 0 14px;
+    font-size: clamp(44px, 6vw, 78px);
+    line-height: 1.03;
+    font-weight: 950;
+    color: var(--text);
+    transform: translateY(-22px);
+    text-shadow: 0 12px 35px rgba(0,0,0,0.65);
+    text-transform: none;
+    letter-spacing: 1.2px;
+}
+
+.heroOverlay p{
+    margin: 0 0 26px;
+    font-size: clamp(16px, 2.2vw, 22px);
+    color: var(--muted);
+    letter-spacing: 0.2px;
+    text-shadow: 0 10px 28px rgba(0,0,0,0.55);
+}
+.goldText{
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+.heroActions{
+    display: flex;
+    gap: 14px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 6px;
+}
+
+.btnPrimary{
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    color: #111;
+    font-weight: 800;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 18px;
+    box-shadow: 0 14px 34px rgba(201, 162, 79, 0.18);
+    transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.btnPrimary:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+    box-shadow: 0 18px 44px rgba(201, 162, 79, 0.22);
+}
+
+.btnGhost{
+    background: rgba(255,255,255,0.06);
+    color: var(--text);
+    font-weight: 700;
+    border: 1px solid rgba(244,241,234,0.18);
+    padding: 14px 18px;
+    border-radius: 18px;
+    transition: transform .15s ease, border-color .15s ease, background .15s ease;
+}
+
+.btnGhost:hover{
+    transform: translateY(-1px);
+    border-color: rgba(201,162,79,0.40);
+    background: rgba(201,162,79,0.10);
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 520px){
+    .navbarInner{ height: 62px; }
+    .hero{ min-height: calc(100vh - 62px); }
+    .heroOverlay{ min-height: calc(100vh - 62px); }
+}
+
+.sectionHeader h2{
+    margin: 0 0 14px;
+    font-size: clamp(32px, 4.5vw, 46px);
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    color: var(--text);
+    text-align: center;
+    position: relative;
+}
+.sectionHeader h2::after{
+    content: "";
+    display: block;
+    width: 72px;
+    height: 3px;
+    margin: 16px auto 0;
+    background: linear-gradient(135deg, var(--gold), var(--gold2));
+    border-radius: 3px;
+}
+
+.sectionHeader p{
+    margin: 16px auto 0;
+    max-width: 680px;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--muted);
+    text-align: center;
+}
+/* Home - Best Sellers images */
+.productImg{
+    width: 100%;
+    height: 240px;              /* יותר גובה */
+    object-fit: contain;        /* לא חותך */
+    object-position: center;    /* מרכז */
+    background: #0b0b0c;        /* מסגרת כהה אלגנטית */
+    display: block;
+    cursor: pointer;
+    transition: transform .25s ease;
+}
+
+.productImg:hover{
+    transform: scale(1.03);
+}
+
+
+/* Home Lightbox */
+.homeLightbox{
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.78);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    padding: 16px;
+}
+
+.homeLightboxInner{
+    position: relative;
+    width: min(1100px, 96vw);
+    max-height: 90vh;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #0b0b0c;
+    border: 1px solid rgba(255,255,255,0.12);
+}
+
+.homeLightboxImg{
+    width: 100%;
+    height: min(90vh, 720px);
+    object-fit: contain;
+    display: block;
+    background: #000;
+}
+
+.homeLightboxClose{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 10;
+    border: 0;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    font-weight: 900;
+    padding: 8px 12px;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.productVideo{
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background: #0b0b0c;
+    display: block;
+}
+/* =========================
+   Home - Favorites (3 videos)
+   ========================= */
+
+.favoritesGrid{
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    margin-top: 26px;
+}
+
+@media (max-width: 900px){
+    .favoritesGrid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px){
+    .favoritesGrid{ grid-template-columns: 1fr; }
+}
+
+.favoriteCard{
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 18px 50px rgba(0,0,0,0.25);
+}
+
+.favoriteVideoBtn{
+    all: unset;
+    display: block;
+    cursor: pointer;
+    position: relative;
+    width: 100%;
+}
+
+.favoriteVideo{
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    background: #0b0b0c;
+    display: block;
+}
+
+.favoriteZoomHint{
+    position: absolute;
+    left: 12px;
+    bottom: 12px;
+    background: rgba(0,0,0,0.55);
+    border: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.92);
+    font-weight: 700;
+    font-size: 13px;
+    padding: 8px 10px;
+    border-radius: 12px;
+    backdrop-filter: blur(6px);
+}
+
+.favoriteBody{
+    padding: 16px 16px 18px;
+    text-align: center;
+}
+
+.favoriteMeta{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 8px;
+}
+
+.favoriteCategory{
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(201,162,79,0.12);
+    border: 1px solid rgba(201,162,79,0.22);
+    color: rgba(244,241,234,0.92);
+}
+
+.favoriteTitle{
+    margin: 6px 0 12px;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--text);
+}
+
+.btnSmallGold{
+    display: inline-block;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold);
+    font-weight: 800;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    transition: all .2s ease;
+}
+
+.btnSmallGold:hover{
+    background: var(--gold);
+    color: #111;
+}
+
+
+.btnSmallGold:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+
+.btnSmallGold:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.02);
+}
+
+/* Modal video */
+.homeLightboxVideo{
+    width: 100%;
+    height: min(78vh, 720px);
+    display: block;
+    background: #000;
+}
+
+.homeLightboxActions{
+    padding: 14px;
+    display: flex;
+    justify-content: center;
+    background: #0b0b0c;
+    border-top: 1px solid rgba(255,255,255,0.10);
+}
+/* Title above the video */
+.favoriteTop{
+    padding: 14px 14px 10px;
+    text-align: center;
+}
+
+.favoriteTitleTop{
+    margin: 0;
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--text);
+}
+
+/* (Optional) אם נשאר לך CSS של תג קטגוריה מהגרסה הקודמת - אפשר למחוק/להשאיר.
+   כבר אין שימוש ב: favoriteMeta / favoriteCategory / favoriteTitle (הישן) */
+/* =========================
+   CONTACT PAGE STYLE
+   ========================= */
+
+.contactPage{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.contactOverlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    backdrop-filter: blur(3px);
+}
+
+.contactContainer{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+}
+
+.contactTitle{
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #f6e27a, #d4af37, #b8902e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contactSubtitle{
+    color: #ccc;
+    margin-bottom: 30px;
+    font-size: 18px;
+}
+
+.contactCard{
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(201,162,79,0.25);
+    border-radius: 24px;
+    padding: 40px 30px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+}
+
+.contactInfo h3{
+    color: #d4af37;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+.contactInfo p{
+    color: #f1f1f1;
+    margin-bottom: 10px;
+}
+
+.contactWhatsappBtn{
+    display: inline-block;
+    margin-top: 8px;
+    background: linear-gradient(135deg, #d4af37, #b8902e);
+    color: #111;
+    font-weight: 800;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .2s ease;
+}
+
+.contactWhatsappBtn:hover{
+    transform: translateY(-2px);
+}
+/* =========================
+   CONTACT PAGE STYLE (VIDEO BG)
+   ========================= */
+
+.contactPage{
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Background video */
+.contactBgVideo{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65);
+    transform: scale(1.02);
+}
+
+.contactOverlay{
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.68);
+    backdrop-filter: blur(3px);
+}
+
+.contactContainer{
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    max-width: 520px;
+    padding: 40px 0;
+}
+
+.contactTitle{
+    font-size: 42px;
+    font-weight: 900;
+    margin-bottom: 10px;
+    background: linear-gradient(90deg, #f6e27a, #d4af37, #b8902e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contactSubtitle{
+    color: #e2e2e2;
+    margin-bottom: 26px;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.contactCard{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(201,162,79,0.25);
+    border-radius: 24px;
+    padding: 34px 26px;
+    backdrop-filter: blur(14px);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.45);
+}
+
+.contactInfo h3{
+    color: #d4af37;
+    margin-top: 18px;
+    margin-bottom: 6px;
+    font-weight: 900;
+}
+
+.contactInfo p{
+    color: #f1f1f1;
+    margin: 0 0 10px;
+}
+
+/* Click-to-call */
+.contactPhoneLink{
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 18px;
+    padding: 10px 14px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(0,0,0,0.25);
+    transition: transform .15s ease, filter .15s ease;
+}
+
+.contactPhoneLink:hover{
+    transform: translateY(-1px);
+    filter: brightness(1.05);
+}
+
+.contactWhatsappBtn{
+    display: inline-block;
+    margin-top: 6px;
+    background: linear-gradient(135deg, #d4af37, #b8902e);
+    color: #111;
+    font-weight: 900;
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: transform .15s ease, filter .15s ease;
+}
+
+.contactWhatsappBtn:hover{
+    transform: translateY(-2px);
+    filter: brightness(1.03);
+}
+@media (max-width: 520px){
+    .navbarInner{ height: 62px; }
+    .hero{ min-height: calc(100vh - 62px); }
+    .heroOverlay{ min-height: calc(100vh - 62px); }
+}
+@media (max-width: 600px){
+
+    /* NAVBAR */
+    .navbarInner{
+        height: auto;
+        padding: 10px 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .brand{
+        justify-content: center;
+    }
+
+    .navLinks{
+        width: 100%;
+        justify-content: center;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 12px;
+        padding: 6px 0 4px;
+    }
+
+    .navLink{
+        flex: 0 0 auto;
+        white-space: nowrap;
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    /* HERO */
+    .heroVideo{
+        object-position: center center;
+        transform: none;
+    }
+
+    .heroOverlay{
+        padding: 44px 16px;
+        transform: none;
+        min-height: calc(100vh - 62px);
+    }
+
+    .heroOverlay h1{
+        font-size: 32px;
+        transform: none;
+    }
+
+    .heroOverlay p{
+        font-size: 15px;
+    }
+
+    .heroActions{
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .heroActions a{
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+    }
+}
+

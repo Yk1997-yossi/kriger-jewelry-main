@@ -1,0 +1,128 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/* ===== FEATURED SECTION ===== */
+
+.featuredSection {
+    padding: 100px 0;
+    background: #0f0f10;
+}
+
+.featuredContainer {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+.featuredHeader {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.featuredTitle {
+    font-size: 38px;
+    color: #d4af37;
+    margin-bottom: 12px;
+}
+
+.featuredSubtitle {
+    color: #ccc;
+}
+
+.featuredGrid {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.featuredCard {
+    position: relative;
+    width: 300px;
+    height: 380px;
+    overflow: hidden;
+    border-radius: 20px;
+    text-decoration: none;
+}
+
+.featuredCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.featuredCard:hover img {
+    transform: scale(1.07);
+}
+
+.featuredOverlay {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 22px;
+    background: linear-gradient(
+            to top,
+            rgba(0,0,0,0.85),
+            transparent
+    );
+    text-align: center;
+}
+
+.featuredOverlay h3 {
+    color: white;
+    font-size: 22px;
+}
+
+.featuredButtonWrap {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.featuredButton {
+    background: #c9a227;
+    padding: 14px 30px;
+    border-radius: 30px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.featuredButton:hover {
+    background: #b8902e;
+}
+

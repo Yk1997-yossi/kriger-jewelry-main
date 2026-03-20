@@ -1,0 +1,168 @@
+/* ===== PAGE ===== */
+
+.galleryPage {
+    background: #0f0f10;
+    min-height: 100vh;
+    padding: 40px 0;
+}
+
+.galleryContainer {
+    width: min(1100px, 92%);
+    margin: 0 auto;
+}
+
+/* ===== HEADER ===== */
+
+.galleryHeader {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.luxuryTitle {
+    font-size: 48px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0 0 14px;
+    background: linear-gradient(90deg, #f6e27a, #d4af37, #b8902e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.luxurySubtitle {
+    text-align: center;
+    color: #cfcfcf;
+    margin-bottom: 40px;
+    font-size: 18px;
+}
+
+/* ===== SECTION ===== */
+
+.sectionTitle {
+    text-align: center;
+    margin: 40px 0 20px;
+}
+
+.sectionTitle h2 {
+    color: #d7b35a;
+    font-size: 28px;
+}
+
+/* ===== GRID ===== */
+
+.galleryGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+}
+
+.mediaCard {
+    width: 260px;
+    flex: 0 0 260px;
+    border-radius: 18px;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(215, 179, 90, 0.25);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.mediaCard:hover {
+    transform: translateY(-4px);
+}
+
+.galleryMedia {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+/* ===== LIGHTBOX ===== */
+
+.lightboxOverlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.lightboxInner {
+    position: relative;
+    background: #111;
+    border-radius: 18px;
+    padding: 20px;
+    width: min(900px, 95vw);
+    text-align: center;
+}
+
+.lightboxMedia {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+    margin-bottom: 20px;
+}
+
+/* X button */
+.lightboxClose {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    z-index: 5;            /* ✅ חשוב: מעל הוידאו */
+    pointer-events: auto;  /* ✅ חשוב: שהקליק יתפס */
+}
+
+/* WhatsApp button */
+.whatsappBtn {
+    display: inline-block;
+    background: #c9a227;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+}
+@media (max-width: 600px){
+    .galleryPage{ padding: 24px 0; }
+
+    .luxuryTitle{ font-size: 34px; }
+    .luxurySubtitle{ font-size: 15px; margin-bottom: 26px; }
+
+    .sectionTitle{ margin: 28px 0 14px; }
+    .sectionTitle h2{ font-size: 22px; }
+
+    .galleryGrid{ gap: 16px; }
+
+    .mediaCard{
+        width: 92%;
+        flex: 0 0 92%;
+    }
+
+    .galleryMedia{
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .lightboxInner{
+        padding: 14px;
+    }
+
+    .whatsappBtn{
+        width: 100%;
+        max-width: 320px;
+        text-align: center;
+    }
+}
