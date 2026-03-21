@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from "react";
-import { galleryData } from "../data/GalleryData";
-import "../styles/Gallery.css";
+import { galleryData } from "./GalleryData";
+import "./Gallery.css";
 
 export default function Gallery() {
     const [activeItem, setActiveItem] = useState(null);

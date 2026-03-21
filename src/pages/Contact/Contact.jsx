@@ -1,5 +1,5 @@
-import { homeData } from "../data/homeData";
-
+import { homeData } from "../Home/homeData";
+import './Contact.css';
 export default function Contact() {
     const phoneDisplay = "054-7494418";
     const phoneTel = "0547494418";
@@ -7,7 +7,6 @@ export default function Contact() {
 
     return (
         <div className="contactPage" dir="rtl">
-            {/* Background Video */}
             <video
                 className="contactBgVideo"
                 src={bgVideo}

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import { homeData } from "../data/homeData";
+import { homeData } from "./homeData";
 import { useMemo, useState } from "react";
+import './Home.css';
 
 export default function Home() {
     const [activeVideo, setActiveVideo] = useState(null);
@@ -37,7 +38,6 @@ export default function Home() {
 
     return (
         <div dir="rtl">
-            {/* HERO */}
             <section className="hero">
                 <video
                     className="heroVideo"
@@ -50,11 +50,9 @@ export default function Home() {
 
                 <div className="heroOverlay">
                     <h1>
-                        {homeData.titleMain} <span className="goldText">{homeData.titleAccent}</span>
+                        {homeData.titleMain}
                     </h1>
-                    <p>{homeData.subtitle}</p>
-
-                    <p>טבעות • שרשראות • צמידים משובצי יהלומים</p>
+                    <p className="goldText">{homeData.subtitle}</p>
 
                     <div className="heroActions">
                         <Link to={homeData.galleryPath} className="btnPrimary">לגלריה</Link>
@@ -69,8 +67,6 @@ export default function Home() {
                     </div>
                 </div>
             </section>
-
-            {/* WHY US */}
             <section className="section">
                 <div className="container">
                     <div className="sectionHeader">

@@ -1,7 +1,5 @@
-/* ===== PAGE ===== */
-
 .galleryPage {
-    background: #0f0f10;
+    background: var(--bg); /* משתמש ברקע הכללי */
     min-height: 100vh;
     padding: 40px 0;
 }
@@ -23,19 +21,17 @@
     font-weight: 800;
     text-align: center;
     margin: 0 0 14px;
-    background: linear-gradient(90deg, #f6e27a, #d4af37, #b8902e);
+    background: linear-gradient(90deg, #f6e27a, var(--gold), var(--gold2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
 .luxurySubtitle {
     text-align: center;
-    color: #cfcfcf;
+    color: var(--muted);
     margin-bottom: 40px;
     font-size: 18px;
 }
-
-/* ===== SECTION ===== */
 
 .sectionTitle {
     text-align: center;
@@ -43,7 +39,7 @@
 }
 
 .sectionTitle h2 {
-    color: #d7b35a;
+    color: var(--gold);
     font-size: 28px;
 }
 
@@ -79,8 +75,6 @@
     display: block;
 }
 
-/* ===== LIGHTBOX ===== */
-
 .lightboxOverlay {
     position: fixed;
     inset: 0;
@@ -107,7 +101,6 @@
     margin-bottom: 20px;
 }
 
-/* X button */
 .lightboxClose {
     position: absolute;
     top: 10px;
@@ -120,49 +113,35 @@
     font-size: 18px;
     font-weight: bold;
     cursor: pointer;
-
-    z-index: 5;            /* ✅ חשוב: מעל הוידאו */
-    pointer-events: auto;  /* ✅ חשוב: שהקליק יתפס */
+    z-index: 5;
+    pointer-events: auto;
 }
 
-/* WhatsApp button */
 .whatsappBtn {
     display: inline-block;
-    background: #c9a227;
+    background: var(--gold);
     color: white;
     padding: 12px 24px;
     border-radius: 30px;
     text-decoration: none;
     font-weight: bold;
 }
+
 @media (max-width: 600px){
     .galleryPage{ padding: 24px 0; }
-
     .luxuryTitle{ font-size: 34px; }
     .luxurySubtitle{ font-size: 15px; margin-bottom: 26px; }
-
     .sectionTitle{ margin: 28px 0 14px; }
     .sectionTitle h2{ font-size: 22px; }
-
     .galleryGrid{ gap: 16px; }
-
     .mediaCard{
         width: 92%;
         flex: 0 0 92%;
     }
-
     .galleryMedia{
         height: 220px;
-        object-fit: cover;
     }
-
-    .lightboxInner{
-        padding: 14px;
-    }
-
     .whatsappBtn{
         width: 100%;
-        max-width: 320px;
-        text-align: center;
     }
 }

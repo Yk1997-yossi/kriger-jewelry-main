@@ -1,9 +1,9 @@
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
-import AboutUs from "./pages/AboutUs";
+import Navbar from "./components/Navbar/Navbar";
+import Home from "./pages/Home/Home";
+import Gallery from "./pages/Gallery/Gallery";
+import Contact from "./pages/Contact/Contact";
+import AboutUs from "./pages/AboutUs/AboutUs";
 import {Analytics} from "@vercel/analytics/react";
 
 function App() {
