@@ -5,6 +5,8 @@ import Gallery from "./pages/Gallery/Gallery";
 import Contact from "./pages/Contact/Contact";
 import AboutUs from "./pages/AboutUs/AboutUs";
 import {Analytics} from "@vercel/analytics/react";
+import AdminPanel from "./management/AdminPanel"
+import ProductPage from "./pages/ProdactPage/ProductPage";
 
 function App() {
     return (
@@ -16,6 +18,8 @@ function App() {
                 <Route path="/gallery" element={<Gallery/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                 <Route path={"/about"} element={<AboutUs/>}/>
+                <Route path="/product/:id" element={<ProductPage />} />
+                <Route path="/admin-secret-panel" element={<AdminPanel />} />
             </Routes>
             <Analytics/>
         </BrowserRouter>

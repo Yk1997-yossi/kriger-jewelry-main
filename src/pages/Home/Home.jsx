@@ -95,7 +95,6 @@ export default function Home() {
                             <p>ליווי אישי מחבר בורסה, בעל נסיון של 35 שנים בתחום היהלומים</p>
                         </div>
 
-                        {/* NEW: VARIETY */}
                         <div className="infoCard">
                             <h3>גיוון</h3>
                             <p>מבחר יהלומים טבעיים וגם יהלומי מעבדה — באיכות לא מתפשרת ובמחירים משתלמים.</p>
@@ -152,7 +151,6 @@ export default function Home() {
                 </div>
             </section>
 
-            {/* VIDEO MODAL */}
             {activeVideo && (
                 <div className="homeLightbox" onClick={() => setActiveVideo(null)}>
                     <div className="homeLightboxInner" onClick={(e) => e.stopPropagation()}>

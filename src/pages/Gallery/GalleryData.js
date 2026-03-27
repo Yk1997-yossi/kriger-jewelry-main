@@ -26,3 +26,7 @@ export const galleryData = [
     {type: "video",src:"/videos/earring1.mp4"},
     {type: "video",src:"/videos/earring2.mp4"},
 ]
+export const gallerySEO = {
+    title: "קולקציית טבעות אירוסין ותכשיטי יהלומים | קריגר תכשיטים",
+    description: "צפו בגלריית התכשיטים שלנו. טבעות אירוסין, נישואין ויהלומים בעיצוב אישי ובאיכות הגבוהה ביותר."
+};

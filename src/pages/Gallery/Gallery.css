@@ -1,5 +1,5 @@
 .galleryPage {
-    background: var(--bg); /* משתמש ברקע הכללי */
+    background: var(--bg);
     min-height: 100vh;
     padding: 40px 0;
 }
@@ -9,7 +9,6 @@
     margin: 0 auto;
 }
 
-/* ===== HEADER ===== */
 
 .galleryHeader {
     text-align: center;
@@ -42,8 +41,6 @@
     color: var(--gold);
     font-size: 28px;
 }
-
-/* ===== GRID ===== */
 
 .galleryGrid {
     display: flex;
