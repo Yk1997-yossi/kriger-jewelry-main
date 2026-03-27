@@ -16,7 +16,7 @@ function AdminPanel(){
     const[diamondColor,setDiamondColor] = useState("")
     const[stoneDetail,setStoneDetail] = useState("")
 
-    const [videoId,setVideoId] = useState("")
+    const videoId = ""
     const[isVideo,setIsVideo] = useState(true)
     const[url,setUrl] = useState("")
 
